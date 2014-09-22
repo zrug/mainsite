@@ -1,0 +1,718 @@
+
+===============================================================================
+===============================================================================
+=============== 身份验证 =======================================================
+===============================================================================
+
+获取短信验证码
+http://192.168.222.173:2016/api/code/generate
+
+POST:
+{"cellPhone": ":cellPhone"}
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        }
+    }
+}
+
+1)statusCode:1300,注册成功
+2)statusCode:1303,注册失败,系统异常
+3)statusCode:1301,errors:参数异常信息提示
+
+===============================================================================
+
+注册
+http://192.168.222.173:2016/api/account/register2
+
+POST:
+{
+    "cellPhone": ":cellPhone",
+    "password": ":password",
+    "deviceType": ":mobile || web",
+    "barCode": ":barCode"
+}
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        },
+        "data": [
+            {
+                "userId": "618e491f-2541-4467-80a8-6e0c6eb561ae",
+                "userToken": "40f0571e-1764-4967-8808-8bd0bba6b471",
+                "isFaceRegister": false,
+                "faceCount": 0
+            }
+        ]
+    }
+}
+
+1)statusCode:1300,注册成功
+2)statusCode:1308,手机号码已经存在
+3)statusCode:1310,激活码无效
+4)statusCode:1303,注册失败,系统异常
+5)statusCode:1301,errors:参数异常信息提示
+
+===============================================================================
+
+完善用户信息
+http://192.168.222.173:2016/api/account/PostInformationImproved
+
+POST:
+{
+    "userId": ":userId"
+}
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        }
+    }
+}
+
+1)statusCode:1300,更新成功
+2)statusCode:1306,更新失败
+3)statusCode:1301,errors:参数异常信息提示
+
+===============================================================================
+
+登录
+http://192.168.222.173:2016/api/account/login
+
+POST:
+{
+    "cellPhone": "13812312314",
+    "password": "1234",
+    "deviceType": ":mobile || web"
+}
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        },
+        "data": [
+            {
+                "userId": "d85b740b-f5ca-432b-86a6-422a0569f0d1",
+                "userToken": "0b3af34d-e9b8-4455-9220-737e68470711",
+                "devicetoken": null
+            }
+        ]
+    }
+}
+
+1)statusCode:1300,登录成功
+2)statusCode:1303,未处理异常
+3)statusCode:1304,登录失败
+
+===============================================================================
+
+登出
+http://192.168.222.173:2016/api/account/postlogout
+
+POST:
+{
+    "userId": "d85b740b-f5ca-432b-86a6-422a0569f0d1",
+    "deviceType": "web"
+}
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        }
+    }
+}
+
+1)statusCode:1300,注销成功
+2)statusCode:1304,注销失败
+3)statusCode:1301,errors:参数异常信息提示
+4) statusCode:1303,其它未处理异常
+
+===============================================================================
+
+添加履历信息
+http://192.168.222.173:2016/api/account/addparticulars
+
+POST:
+{
+    "userId": "d85b740b-f5ca-432b-86a6-422a0569f0d1",
+    "companyName": "深集科技",
+    "inDate": "2014-01-31",
+    "outDate": "2014-02-28",
+    "isIn": "true",
+    "information": "blahblahblah"
+}
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        }
+    }
+}
+
+1)statusCode:1300,添加成功
+2)statusCode:1303,添加失败,系统异常
+3)statusCode:1301,errors:参数异常信息提示
+
+===============================================================================
+
+获取个人信息
+http://192.168.222.173:2016 api/account/GetUserInformation
+
+GET
+?userId=:userId
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        },
+        "data": {
+            "id": "c16c21fb-8365-478f-b570-27e80c5b30f6",
+            "userId": "3b6a51ae-67cc-4b37-8273-9a5a7a8754bf",
+            "fullName": null,
+            "email": null,
+            "industry": null,
+            "duties": null,
+            "department": null,
+            "locationProvince": null,
+            "locationCity": null,
+            "company": null,
+            "age": null,
+            "sex": null,
+            "introduction": null,
+            "createTime": "2014-08-27T15:13:31.17",
+            "updateTime": null,
+            "reacordTime": null,
+            "isDeleted": null,
+            "pageIndex": 0,
+            "pageSize": 10,
+            "recordCount": 0,
+            "endRecord": 0
+        }
+    }
+}
+
+1)statusCode:1300,添加成功
+2)statusCode:1302,未找到用户
+
+
+===============================================================================
+===============================================================================
+=============== 人脉模块 =======================================================
+===============================================================================
+
+http://192.168.222.173:2016/api/networking/addfriends
+
+POST:
+{
+    "sourceUserId": "9ea80b44-e178-4a3c-96ca-ab6179d56afc",
+    "targetUserId": "d85b740b-f5ca-432b-86a6-422a0569f0d1"
+}
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        }
+    }
+}
+
+
+
+
+
+===============================================================================
+===============================================================================
+=============== 项目模块 =======================================================
+===============================================================================
+
+所有项目，带分页
+http://192.168.222.173:2016/api/PiProjectController/AllProjects?
+
+GET:
+pageSize=:pageSize&index=:index
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        },
+        "data": [
+            {
+                "projectName": "testProjectProgress",
+                "id": "b5da014a-0796-4cad-9847-32dccd95f81a",
+                "mainDesignStage": "No",
+                "exceptFigureStartTime": "2014-08-22T17:59:29.703",
+                "exceptFigureFinishTime": "2024-08-22T17:59:29.703",
+                "elevator": false,
+                "airCondition": false,
+                "externalWallMeterial": false,
+                "heating": false,
+                "stealStructure": false,
+                "actureStartTime": null,
+                "fireControl": "fir",
+                "green": "no",
+                "projectAddress": "No",
+                "projectDescription": "Dis",
+                "exceptStartTime": "2014-08-22T17:59:29.683",
+                "exceptFinishTime": "2024-08-22T17:59:29.683",
+                "investment": 10.2,
+                "storeyArea": 1222.4,
+                "storeyHeight": 192.3,
+                "foreignInvestment": false,
+                "ownerType": null,
+                "landName": "This is landName",
+                "landProvince": "上海",
+                "landCity": "上海",
+                "landDistrict": "上海",
+                "landStreet": "",
+                "landAddress": "this is details address",
+                "longitude": 199.3,
+                "latitude": 2222.22,
+                "landArea": 1111.2,
+                "landPlotRatio": 10.3,
+                "landUsages": "No",
+                "electorWeakInstallation": "招标",
+                "decorationSituation": "招标",
+                "decorationProcess": "无装修",
+                "updateTime": "2014-08-22T17:58:29.06",
+                "createBy": "f483bcfc-3726-445a-97ff-ac7f207dd888",
+                "updateBy": null,
+                "projectKeyWords": null,
+                "pageIndex": 1,
+                "pageSize": 10,
+                "isSaveBack": false,
+                "recordCount": 0,
+                "endIndex": 10,
+                "endRecord": 10,
+                "beginIndex": 0
+            },
+            {
+                .....下一个项目
+            },
+            {
+                .....下一个项目
+            },
+            ......
+        ]
+    }
+}
+
+===============================================================================
+
+获取项目信息
+http://192.168.222.173:2016/api/PiProjectController/projects?
+
+GET:
+projectId=:projectId
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        },
+        "data": {
+            "projectBaseContacts": [
+                {
+                    "id": "ff19da08-0b62-489c-a75a-56f5037ab7b1",
+                    "contactName": "contactName",
+                    "contactCellphone": "contactCellphone",
+                    "contactProjectName": "projectName03",
+                    "contactProjectId": "78094772-a406-4275-86dc-82b291960ca4",
+                    "contactCategory": "zrugCategroy",
+                    "contactDuties": "contactDuties",
+                    "contactCompany": "contactCompany",
+                    "contactCompanyAddress": "contactCompanyAddress",
+                    "createdTime": "2014-08-27T18:18:55.933",
+                    "createdBy": null,
+                    "updatedTime": null,
+                    "updateBy": null,
+                    "isDeleted": false,
+                    "deletedBy": null,
+                    "pageIndex": 0,
+                    "pageSize": 10,
+                    "recordCount": 0,
+                    "endRecord": 0
+                }
+            ],
+            "projectImages": [
+                {
+                    "id": "c220f671-be36-4a87-80ce-488317bc7aba",
+                    "imageName": "90293fdb-5e23-4c6b-ba73-e70d9d8d4144",
+                    "imageOriginalLocation": "/Pictures/OriginalImages/90293fdb-5e23-4c6b-ba73-e70d9d8d4144.png",
+                    "imageCompressLocation": "/Pictures/CompressImages/90293fdb-5e23-4c6b-ba73-e70d9d8d4144.png",
+                    "projectName": "projectName03",
+                    "projectId": "78094772-a406-4275-86dc-82b291960ca4",
+                    "imageCategory": "zrugCategory",
+                    "createdTime": null,
+                    "createdBy": null,
+                    "updatedTime": null,
+                    "updatedBy": null,
+                    "isDeleted": null,
+                    "imageBase64": null,
+                    "pageIndex": 0,
+                    "pageSize": 10,
+                    "recordCount": 0,
+                    "endRecord": 0
+                }
+            ],
+            "projectLandStage": {
+                "id": "78094772-a406-4275-86dc-82b291960ca4",
+                "projectAddress": null,
+                "projectDescription": null,
+                "exceptStartTime": null,
+                "exceptFinishTime": null,
+                "investment": null,
+                "storeyArea": null,
+                "storeyHeight": null,
+                "foreignInvestment": null,
+                "ownerType": null,
+                "landName": null,
+                "landProvince": null,
+                "landCity": null,
+                "landDistrict": null,
+                "landStreet": null,
+                "landAddress": null,
+                "longitude": null,
+                "latitude": null,
+                "landArea": null,
+                "landPlotRatio": null,
+                "landUsages": null,
+                "isDeleted": false,
+                "updateTime": "2014-08-27T18:18:55.183",
+                "updateBy": null,
+                "pageIndex": 0,
+                "pageSize": 10,
+                "recordCount": 0,
+                "endRecord": 0
+            },
+            "projectMainDesignStage": {
+                "id": "78094772-a406-4275-86dc-82b291960ca4",
+                "mainDesignStage": null,
+                "exceptFigureStartTime": null,
+                "exceptFigureFinishTime": null,
+                "elevator": null,
+                "airCondition": null,
+                "heating": null,
+                "externalWallMeterial": null,
+                "stealStructure": null,
+                "updateBy": null,
+                "updateTime": "2014-08-27T18:18:55.183",
+                "isDeleted": false,
+                "deleteBy": null,
+                "pageIndex": 0,
+                "pageSize": 10,
+                "recordCount": 0,
+                "endRecord": 0
+            },
+            "projectMainConstructStage": {
+                "id": "78094772-a406-4275-86dc-82b291960ca4",
+                "actureStartTime": null,
+                "fireControl": null,
+                "green": null,
+                "updateBy": null,
+                "updateTime": "2014-08-27T18:18:55.183",
+                "isDeleted": false,
+                "deleteBy": null,
+                "pageIndex": 0,
+                "pageSize": 10,
+                "recordCount": 0,
+                "endRecord": 0
+            },
+            "projectDecorateStage": {
+                "id": "78094772-a406-4275-86dc-82b291960ca4",
+                "electorWeakInstallation": null,
+                "decorationSituation": null,
+                "decorationProcess": null,
+                "updateBy": null,
+                "updateTime": "2014-08-27T18:18:55.183",
+                "isDeleted": false,
+                "deleteBy": null,
+                "pageIndex": 0,
+                "pageSize": 10,
+                "recordCount": 0,
+                "endRecord": 0
+            },
+            "projectBaseInfomation": {
+                "id": "78094772-a406-4275-86dc-82b291960ca4",
+                "projectName": "projectName33",
+                "isDeleted": null,
+                "createTime": null,
+                "createBy": null,
+                "deleteBy": null,
+                "updateTime": "2014-08-27T18:22:15.613",
+                "updateBy": null,
+                "pageIndex": 0,
+                "pageSize": 10,
+                "recordCount": 0,
+                "endRecord": 0
+            }
+        }
+    }
+}
+
+===============================================================================
+
+新增项目信息
+
+http://192.168.222.173:2016/api/PiProjectController/AddProject
+
+POST:
+{
+    "projectBaseContacts": [],
+    "projectImages": [],
+    "projectLandStage": {
+        "projectAddress": null,
+        "projectDescription": null,
+        "exceptStartTime": null,
+        "exceptFinishTime": null,
+        "investment": null,
+        "storeyArea": null,
+        "storeyHeight": null,
+        "foreignInvestment": null,
+        "ownerType": null,
+        "landName": null,
+        "landProvince": null,
+        "landCity": null,
+        "landDistrict": null,
+        "landStreet": null,
+        "landAddress": null,
+        "longitude": null,
+        "latitude": null,
+        "landArea": null,
+        "landPlotRatio": null,
+        "landUsages": null
+    },
+    "projectMainDesignStage": {
+        "mainDesignStage": null,
+        "exceptFigureStartTime": null,
+        "exceptFigureFinishTime": null,
+        "elevator": null,
+        "airCondition": null,
+        "heating": null,
+        "externalWallMeterial": null,
+        "stealStructure": null
+    },
+    "projectMainConstructStage": {
+        "actureStartTime": null,
+        "fireControl": null,
+        "green": null
+    },
+    "projectDecorateStage": {
+        "electorWeakInstallation": null,
+        "decorationSituation": null,
+        "decorationProcess": null
+    },
+    "projectBaseInfomation": {
+        "projectName": "projectName"
+    }
+}
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        },
+        "data": [
+            {
+                "projectId": "7ff4a27e-6c92-48d8-896e-17beac1957f3"
+            }
+        ]
+    }
+}
+
+新增项目带照片
+
+POST:
+{
+    "projectImages": [{
+        "imageBase64": "/9j/4AAQSkZJRgABAQEASABIAAD/4gxYSUNDX1BST ... JP65rGrU0TTPUjXgl70belv1P/9k=",
+        "imageCategory": "imageCategory"
+    }],
+    "projectBaseInfomation": {
+        "projectName": "projectName"
+    }
+}
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        },
+        "data": [
+            {
+                "projectId": "7174e5de-cf72-4031-a539-325a0d6a0b39"
+            }
+        ]
+    }
+}
+
+新增项目带基础联系人
+
+POST:
+{
+    "projectBaseContacts": [{
+        "contactName": "contactName",
+        "contactCellphone": "contactCellphone",
+        "contactCategory": "zrugCategroy",
+        "contactDuties": "contactDuties",
+        "contactCompany": "contactCompany",
+        "contactCompanyAddress": "contactCompanyAddress"
+    }],
+    "projectBaseInfomation": {
+        "projectName": "projectName36"
+    }
+}
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        },
+        "data": [
+            {
+                "projectId": "548b158e-dbd1-4e59-a8a0-8951b618b155"
+            }
+        ]
+    }
+}
+
+===============================================================================
+
+修改项目名称
+
+http://192.168.222.173:2016/api/PiProjectController/UpdateProject
+
+POST:
+{
+    "projectBaseInfomation": {
+        "projectName": "projectName43",
+        "id": "78094772-a406-4275-86dc-82b291960ca4"
+    }
+}
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        }
+    }
+}
+
+修改项目各块信息
+
+POST:
+{
+    "projectLandStage": {
+    },
+
+    "projectMainDesignStage": {
+    },
+
+    "projectMainConstructStage": {
+    },
+
+    "projectDecorateStage": {
+        "electorWeakInstallation": "安装",
+        "decorationSituation": "拆除",
+        "decorationProcess": "不知道",
+    },
+
+    "projectBaseInfomation": {
+        "id": "78094772-a406-4275-86dc-82b291960ca4"
+    }
+}
+
+===============================================================================
+
+添加对项目的评论
+
+http://192.168.222.173:2016/api/PiProject/PostAddPiProjectComments
+
+POST:
+{
+    "projectId": "78094772-a406-4275-86dc-82b291960ca4",
+    "createdBy": "3b6a51ae-67cc-4b37-8273-9a5a7a8754bf",
+    "commentContents": "commentContents-0101"
+}
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        }
+    }
+}
+
+===============================================================================
+
+获取项目的评论
+
+http://192.168.222.173:2016/api/PiProject/GetPiProjectComments?
+
+GET:
+projectId=:projectId
+
+RESPONSE:
+{
+    "d": {
+        "status": {
+            "statusCode": 1300
+        },
+        "data": [
+            {
+                "commnetContents": null,
+                "id": "756c3ab0-f36e-4fc9-9ec0-65b64388b435",
+                "createdBy": null,
+                "createdTime": "2014-08-28T12:29:55.53"
+            }
+        ]
+    }
+}
+
+
+===============================================================================
+==问题
+
+获取所有专题
+
+http://192.168.222.95:801/api/PiProject/GetSeminars?
+
+
+添加专题
+
+http://192.168.222.173:2016/api/PiProject/PostPiProjectSeminarAdd
+
+
+
+
+
+
+
+
+
+
+
+

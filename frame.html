@@ -1,0 +1,267 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>frame</title>
+
+<link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css/reset.css" type="text/css" />
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+
+<!-- 上方主菜单样式 -->
+<link rel="stylesheet" href="js/zmenu/zmenu.css" type="text/css" />
+
+<!-- 对话框样式 -->
+<link rel="stylesheet" href="js/modalwin/component.css" type="text/css" />
+
+<!-- 按钮、控件样式 -->
+<link rel="stylesheet" href="js/icheck/all.css" type="text/css" />
+<link rel="stylesheet" href="js/buttons/buttons.css" type="text/css" />
+ 
+<!-- 各种对话框样式 -->
+<link rel="stylesheet" href="js/modalwin/modals.css" type="text/css" />
+
+<!-- 主体框架样式 -->
+<link rel="stylesheet" href="css/frame.css" type="text/css" />
+
+</head>
+
+<style>
+
+</style>
+
+<body class="">
+
+    <div class="site-nav">
+        <ul class="site-nav-menu">
+            <li class="site-nav-item">
+                <a class="navicon-button x trigger-of-main-menu">
+                  <div class="navicon"></div>
+                </a>
+            </li>
+        </ul>
+        <div class="menu main-nav"></div>
+    </div>
+
+    <div class="header">
+    </div>
+
+    <div class="wrapper" style="overflow: hide">
+
+        <div class="col-left-two">
+            <div class="left-tips">
+                <dl>
+                    <dd class="skin01">
+                        <i class="icon icon-all-trends"></i>
+                        <span class="label">全部动态</span>
+                    </dd>
+                    <dd class="skin01">
+                        <i class="icon icon-all-trends"></i>
+                        <span class="label">好友动态</span>
+                    </dd>
+                    <dd class="skin01">
+                        <i class="icon icon-all-trends"></i>
+                        <span class="label">项目动态</span>
+                    </dd>
+                    <dd class="skin01">
+                        <i class="icon icon-all-trends"></i>
+                        <span class="label">公司动态</span>
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="row panel-shadow message-poster">
+                <textarea class="message-content"></textarea>
+            </div>
+
+            <div class="row panel-shadow">
+                <div class="trends company-trends">
+                </div>
+            </div>
+
+            <div class="row panel-shadow">
+                <div class="trends friend-trends">
+                </div>
+            </div>
+
+            <div class="row panel-shadow">
+                <div class="trends project-trends">
+                </div>
+            </div>
+
+            <div class="row panel-shadow">
+                <div class="trends friend-trends">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-right-one">
+            <div class="row panel-shadow block-btn block-btn-add-contact">
+                <i class="left icon icon-add-contact"></i>
+                <span>添加联系人</span>
+                <i class="right icon icon-arrow-right"></i>
+            </div>
+            <div class="row panel-shadow block-btn block-btn-my-address-book">
+                <i class="left icon icon-my-address-book"></i>
+                <span>我的通讯录</span>
+                <i class="right icon icon-arrow-right"></i>
+            </div>
+            <div class="row panel-shadow block-btn block-btn-my-follow-projects">
+                <i class="left icon icon-my-follow-projects"></i>
+                <span>我关注的项目</span>
+                <i class="right icon icon-arrow-right"></i>
+            </div>
+
+            <div class="row panel-shadow block-information">
+                <div class="row-header">
+                    <i class="left icon icon-linked"></i>
+                    <span>可能认识的人</span>
+                    <div class="hr"></div>
+                </div>
+                <div class="row-content">
+                    <h1>hihi</h1>
+                </div>
+            </div>
+            <div class="row panel-shadow block-information">
+                <div class="row-header">
+                    <i class="left icon icon-linked"></i>
+                    <span>可能感兴趣的公司</span>
+                    <div class="hr"></div>
+                </div>
+                <div class="row-content">
+                    <h1>hihi</h1>
+                </div>
+            </div>
+            <div class="row panel-shadow block-information">
+                <div class="row-header">
+                    <i class="left icon icon-linked"></i>
+                    <span>我关注的项目</span>
+                    <div class="hr"></div>
+                </div>
+                <div class="row-content">
+                    <h1>hihi</h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="main-menu">
+        <div class="avatar">
+            <img src="" class="avatar-image">
+            <button class="login modal-login-show md-trigger" data-modal="modal-3">登录</button>
+            <button class="logout">登出</button>
+        </div>
+        <ul class="main-menu-buttons">
+        <li><a href="#" class="main-menu-button">通知中心</a></li>
+        <li><a href="#" class="main-menu-button">通知中心</a></li>
+        <li><a href="#" class="main-menu-button">通知中心</a></li>
+        <li class="separate"></li>
+        <li><a href="#" class="main-menu-button">通知中心</a></li>
+        <li><a href="#" class="main-menu-button">通知中心</a></li>
+        <li><a href="#" class="main-menu-button trigger-of-main-menu">关闭</a></li>
+        </ul>
+    </div>
+
+    <div class="footer">
+    </div>
+
+    <div class="main-menu">
+    </div>
+
+    <div class="modals">
+    </div>
+
+</body>
+
+<!-- 必备组件 -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/underscore-min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/modernizr.min.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+
+<!-- 右侧菜单组件 -->
+<script type="text/javascript" src="tpl/mainMenuController.js"></script>
+
+<!-- 上方菜单组件 -->
+<script type="text/javascript" src="js/zmenu/zmenu.js"></script>
+<script type="text/javascript" src="js/zmenu/zmenu-def.js"></script>
+<script>
+    new Menu(global.mainMenuDef01);
+</script>
+
+<!-- 控件样式 -->
+<script type="text/javascript" src="js/icheck/icheck.js"></script>
+<script type="text/javascript" src="js/buttons/buttons.js"></script>
+
+<!-- 各种对话框组件 -->
+<script type="text/javascript" src="js/modalwin/modals.js"></script>
+<script>
+    modals.use('login', 'signup');
+</script>
+<script type="text/javascript" src="js/modalwin/classie.js"></script>
+<script type="text/javascript" src="js/modalwin/modalEffects.js"></script>
+<script type="text/javascript" src="js/bpopup.js"></script>
+
+
+<script>
+
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

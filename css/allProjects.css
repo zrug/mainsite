@@ -1,0 +1,35 @@
+.content   {width:1000px; height:auto; margin:0px; min-height:640px; background:transparent;}
+
+.content dl {}
+.content dl dd {width: 212px; height: 200px; margin: 0px 30px 30px 0px; float: left; font-size: 11px;}
+
+.porject-card {font-size:12px; cursor:pointer; box-shadow: 1px 2px 1px #ccc;}
+.porject-card .blue {color:#278ff1;}
+.porject-card .gray {color:#888888;}
+.porject-card .orange {color:#ff9000;} 
+.porject-card:hover {
+    /*-ms-transform: scale(0.97, 0.97);*/ /* IE 9 */
+    /*-webkit-transform: scale(0.97, 0.97);*/ /* Chrome, Safari, Opera */
+    /*transform: scale(0.97, 0.97);*/
+}
+
+.porject-card {background:#fff; padding:0; position:relative; font-family: Arial Narrow, SimHei;}
+.porject-card #projectName {position: absolute; left: 6px; top: 112px; font-size: 14px; width: 160px;}
+.porject-card #projectProgress {position: absolute; right: 6px; top: 105px;}
+.porject-card #projectSection {height:30px; width:30px;}
+.porject-card #investment-title {position:absolute; left: 6px; top: 140px;}
+.porject-card #investment {position:absolute; left: 6px; top: 154px;}
+.porject-card #areaOfStructure-title {position:absolute; left: 86px; top: 140px;}
+.porject-card #areaOfStructure {position:absolute; left: 86px; top: 154px;}
+.porject-card #expectedStartTime {position: absolute; left: 136px; width: 70px; text-align: right; top: 140px; font-size: 10px;}
+.porject-card #expectedFinishTime {position: absolute; left: 136px; width: 70px; text-align: right; top: 154px; font-size: 12px;}
+.porject-card #map {position: absolute; left: 0px; top: 0px; padding: 6px; background: #fff;}
+.porject-card #map img {width:200px;}
+.porject-card .mappoint {position: absolute; left: 6px; bottom: 6px; width: 20px; height: 20px;
+    background: url(../images/arrow-gps.png) no-repeat;}
+.porject-card #district {position:absolute; left: 30px; bottom: 6px; font-size:12px;}
+.porject-card #province_city {position: absolute; left: 97px; bottom: 6px; text-align: left; width: 85px;}
+.porject-card .focus {position: absolute; left: 0px top: 0px; width: 70px; height: 70px; background: gray;}
+.endOfPage {display:none;}
+
+.clear {clear:both; height:0; display:block;}

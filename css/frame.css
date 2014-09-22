@@ -1,0 +1,122 @@
+body, html {background-color: #E7E7E7; overflow-x: hidden;}
+input,textarea,select {border: 1px solid #c4c4c4;}
+
+.hide {display:none;}
+.red {color:red;}
+.center {text-align:center;}
+
+/*i.icon {width: 20px; height: 20px; background: url(../images/block-btn-01.jpg) no-repeat;}
+i.icon-add-contact {background-position: 0 0;}
+i.icon-my-address-book {background-position: -20px 0;}
+i.icon-my-follow-projects {background-position: -40px 0;}
+i.icon-arrow-right {background-position: -60px 0;}
+i.icon-linked {background-position: -80px 0;}
+*/
+.margin-bottom-10 {margin-bottom: 10px;}
+.margin-bottom-20 {margin-bottom: 20px;}
+.margin-bottom-30 {margin-bottom: 30px;}
+.margin-bottom-40 {margin-bottom: 40px;}
+.margin-bottom-50 {margin-bottom: 50px;}
+.margin-bottom-60 {margin-bottom: 60px;}
+
+.site-nav {width: 100%; height: 77px; line-height: 77px; z-index: 61000; left: 0; top: 0; 
+    background: #6579ac; border-bottom: 1px solid #e1e7f3; margin: 0 auto;}
+.menu.main-nav, .site-nav-menu {list-style: none; float: right;}
+.main-nav {margin-top: 20px;}
+.menuitem {font-family: Lantinghei SC, Hei, Sans-serif; font-weight: 700; text-decoration: none; text-align: left;}
+.main-nav > .menuitem {font-size: 18px; margin-right: 10px;}
+.submenu > .menuitem {font-size: 18px;}
+.menuitem > a > span {color: #fff;}
+.main-nav > .menuitem {background: transparent; width: 60px;}
+.site-nav-item a, .site-nav-item a:visited {font-family: Lantinghei SC, Hei, Sans-serif; 
+    font-weight: 700; font-size: 18px; text-decoration: none; color: #FFF; text-shadow: none; 
+    transition: text-shadow 0.3s; display: block; text-align: left; padding-left: 12px; 
+    width: 70px; line-height: 40px; margin-top: 20px;}
+.site-nav-item a:hover {text-decoration: none; text-shadow: 1px 1px 1px #444;}
+
+.navicon-button {display: inline-block; position: relative; padding: 0.9em; transition: 0.25s; 
+    cursor: pointer; user-select: none; opacity: .8;}
+.navicon-button .navicon:before, .navicon-button .navicon:after {transition: 0.25s;}
+.navicon-button:hover {transition: 0.5s; opacity: 1;}
+.navicon-button:hover .navicon:before, .navicon-button:hover .navicon:after {transition: 0.25s;}
+.navicon-button:hover .navicon:before {top: .7rem;}
+.navicon-button:hover .navicon:after {top: -.7rem;}
+.navicon {position: relative; width: 1.6em; height: .25rem; background: #ffffff; transition: 0.2s; 
+    border-radius: 2.5rem; transform: translate3d(0, 0, 0);}
+.navicon:before, .navicon:after {display: block; content: ""; height: .25rem; width: 1.8rem; 
+    background: #ffffff; position: absolute; z-index: -1; transition: 0.5s 0.25s; border-radius: 1rem; 
+    transform: translate3d(0, 0, 0);}
+.navicon:before {top: .5rem;}
+.navicon:after {top: -.5rem;}
+.open:not(.steps) .navicon:before,
+.open:not(.steps) .navicon:after {top: 0 !important;}
+.open .navicon:before,
+.open .navicon:after {transition: 0.5s;}
+
+/* Minus */
+.open {transform: scale(0.75);}
+.open.uarr {transform: scale(0.75) rotate(90deg);}
+
+/* × and + */
+.open.plus .navicon,
+.open.x .navicon {background: transparent;}
+.open.plus .navicon:before,
+.open.x .navicon:before {transform: rotate(-45deg); height: .27em; width: 1.9em; left: -.6em;}
+.open.plus .navicon:after,
+.open.x .navicon:after {transform: rotate(45deg); height: .27em; width: 1.9em; left: -.6em;}
+.open.plus {transform: scale(0.75) rotate(45deg);}
+
+.wrapper {width: 940px; min-height: 600px; position: relative; margin: 0 auto; padding: 0;}
+.footer {clear: both; width: 100%; height: 80px; background: #6579ac; border-top: 1px solid #ccc; 
+    margin: 0 auto; z-index: 61000;}
+.col-right-two {width: 620px; float: right; position: relative; margin: 20px 0;}
+.col-right-one {width: 300px; float: right; position: relative; margin: 20px 0;}
+.col-left-two {width: 620px; float: left; position: relative; margin: 20px 20px 20px 0;}
+.col-left-one {width: 300px; float: left; position: relative; margin: 20px 20px 20px 0;}
+.row {width: 100%; margin-bottom: 20px; background-color: #FFF; border-radius: 2px;}
+.panel-shadow {box-shadow: 1px 2px 2px #AAA;}
+.message-poster {height: 200px;}
+.message-content {width: 558px; height: 100px; resize: none; font-size: 16px; 
+    font-family: Verdana, Tahoma, Sans-serif; margin: 20px 0 0 20px; padding: 10px;}
+
+.block-btn {width: 256px; padding: 20px 22px;}
+.block-btn i.left {float: left;}
+.block-btn i.right {float: right;}
+.block-btn:hover {margin-top: -2px; margin-bottom: 12px;}
+.block-btn.block-btn-my-follow-projects:hover {margin-top: -2px; margin-bottom: 22px;}
+.block-btn span {line-height: 16px; font-size: 16px; font-family: Lantinghei SC, Hei, Sans-serif; 
+    float: left; margin: 4px 0 0 4px;}
+.block-btn-add-contact {height: 20px; margin-bottom: 10px;}
+.block-btn-my-address-book {height: 20px; margin-bottom: 10px;}
+.block-btn-my-follow-projects {height: 20px;}
+
+.left-tips {position: absolute; left: -143px; top: 220px; width: 143px; overflow: hidden;}
+.left-tips dd {position: relative; height: 17px; background-color: #a8a8a8; color: #fff; 
+    background-image: url(../images/label-tip-01.jpg); left: 110px; margin: 0 0 5px; padding: 15px 20px;}
+.left-tips dd.skin02 {background-position: 0 0;}
+.left-tips dd.skin03 {background-position: 0 -49px;}
+.left-tips dd.skin01 {background-position: 0 -99px;}
+.left-tips .icon {width: 20px; height: 20px; float: left;}
+.left-tips .label {font-size: 17px; color: #481303; text-shadow: 1px 1px 1px #fdd6a7; 
+    font-family: Lantinghei SC, Hei, Sans-serif; font-weight: 400; float: left; margin-left: 10px;}
+.trends {min-height: 110px;}
+.company-trends {min-height: 330px;}
+
+.block-information .row-header {padding-top: 10px; position: relative; margin: 10px;}
+.block-information .row-header i.left {float: left;}
+.block-information .row-header span {float: left; margin: 3px 0 0 5px;}
+.block-information .row-header .hr {clear: both; width: 95%; border-bottom: 1px solid #e8e8e8; 
+    height: 10px; margin: 0 auto;}
+.block-information .row-content {min-height: 140px; padding: 0 10px 10px;}
+
+.main-menu {position: absolute; overflow: hidden; top: 77px; right: 0px; width: 230px; 
+    background: white; box-shadow: -2px 1px 2px #ccc;}
+.main-menu-buttons {}
+.main-menu-buttons li {list-style: none; padding: 0px 20px;}
+.main-menu-buttons li.separate {height: 20px;}
+.main-menu-button {text-indent: 0; text-decoration: none; line-height: 30px; text-align: center; 
+    display: block; color: #666; font-weight: bold;}
+.main-menu > .avatar {text-align: center; position: relative; margin: 50px 0px;}
+.main-menu > .avatar > .avatar-image {width: 80px; height: 80px; display: block; margin: 0 auto 10px auto;}
+.main-menu > .avatar > .login {width: 50px; height: 25px; display: block; margin: 0 auto;}
+.main-menu > .avatar > .logout {width: 50px; height: 25px; display: none; margin: 0 auto;}

@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>PCD</title>
+
+<link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css/reset.css" type="text/css" />
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+
+</head>
+
+<style>
+</style>
+
+<body class="">
+
+</body>
+
+<!-- 必备组件 -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/underscore-min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/PCDSelector.js"></script>
+<script>
+var pcd = global.pcdArea.provinces;
+var citys = [];
+for (var i=0; i<pcd.length; i++) {
+    for (var j=0; j<pcd[i].citys.length; j++) {
+        citys.push(pcd[i].citys[j]);
+    }
+}
+var maxlength = 0;
+for (i=0; i<citys.length; i++) {
+    if (citys[i].districts.length > maxlength)
+        maxlength = citys[i].districts.length;
+}
+for (i=0; i<citys.length; i++) {
+    while (citys[i].districts.length < maxlength) {
+        citys[i].districts.push('');
+    }
+}
+for (i=0; i<citys.length; i++) {
+    $('body').append(citys[i].city + ',');
+}
+$('body').append('<br>');
+
+for (i=0; i<40; i++) {
+    for (j=0; j<citys.length; j++) {
+
+        $('body').append(citys[j].districts[i] + ',');
+    }
+    $('body').append('<br>');
+}
+
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

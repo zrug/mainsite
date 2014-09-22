@@ -1,0 +1,13 @@
+.hidden {display:none;}
+
+.menuitem {padding:0px 20px; line-height:40px; display:list-item; list-style:none; margin:0; 
+	float:left; z-index:99;}
+.menuitem > a {text-decoration:none; color:#333;}
+.menuitem:hover {background: transparent;}
+.main-nav > .menuitem.sub:hover {background: #42517c;}
+.main-nav > .menuitem.sub::after {content: " ▼"; font-size: 14px; font-weight: 700; color: #fff;}
+
+.submenu {position:absolute; top:-999px; left:-999px; z-index:999;}
+.submenu > .menuitem {float:none; background-color: #42517c; min-width:120px;}
+.submenu > .menuitem:hover {background:#42517c;}
+.submenu > .menuitem > a {color:#fff; font-size:85%;}
